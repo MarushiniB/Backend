@@ -13,7 +13,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://client-eta-three-93.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/quiz", quizRoutes);
